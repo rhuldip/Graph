@@ -55,4 +55,4 @@ class BfsForDisconnectedGraph {
     }
 }
 ```
-* We can use the disconnected code in connected scenario also, we just need to remove for loop in bfsOfGraph method.
+* We can use the disconnected code in connected scenario also, we just need to remove for loop in bfsOfGraph method. *
