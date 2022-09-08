@@ -56,3 +56,34 @@ class BfsForDisconnectedGraph {
 }
 ```
 *We can use the disconnected code in connected scenario also, we just need to remove for loop in bfsOfGraph method.*
+
+## DFS for Connected/Disconnected Graph
+```
+class DfsForDisconnectedGraph {
+    public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+        
+        ArrayList<Integer> res = new ArrayList<>();
+        boolean[] visited = new boolean[V];
+        
+        //For Connected Component of Graph
+        dfs(adj, visited, 0, res);
+        
+        //For Disconnected Graph
+        for(int i=0; i<V; i++){
+            dfs(adj, visited, i, res);
+        }
+        return res;
+    }
+    
+    private void dfs(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int K, ArrayList<Integer> res){
+        visited[K] = true;
+        res.add(K);
+        for(int i=0; i<adj.get(K).size(); i++){
+            int nextVertex = adj.get(K).get(i);
+            if(!visited[nextVertex]){
+                dfs(adj, visited, nextVertex, res);
+            }
+        }
+    }
+}
+```
