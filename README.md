@@ -3,7 +3,7 @@ Topics one must know
 =====================
 - [BFS Traversal](#bfs-traversal)
     - [BFS for Connected Graph](#bfs-for-connected-graph)
-    - [BFS for Disconnected Graph(#bfs-for-disconnected-graph)
+    - [BFS for Disconnected Graph](#bfs-for-disconnected-graph)
 - [DFS Traversal](#dfs-traversal)
     - [DFS Iterative](#dfs-iterative)
     - [DFS Recursive](#dfs-recursive)
@@ -44,7 +44,7 @@ class BFS {
 }
 ```
 #### BFS for Disconnected Graph
-* Use the code as (#bfs-for-connected-graph), instead of offering first vertex, make a for loop and call bfs for all unvisited vertexes. *
+* Use the recode [bfs for connected graph](#bfs-for-connected-graph), instead of offering first vertex, make a for loop and call bfs for all unvisited vertexes. *
 ```
 for(int i=0; i<V; i++){
     if(!visited[i])
