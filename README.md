@@ -1,8 +1,24 @@
 # Graph
-## Topics one must know
+Topics one must know
+=====================
 - [BFS Traversal](#bfs-traversal)
-## BFS Traversal
-### BFS for Connected Graph
+    - [BFS for Connected Graph](#bfs-for-connected-graph)
+    - [BFS for Disconnected Graph(#bfs-for-disconnected-graph)
+- [DFS Traversal](#dfs-traversal)
+    - [DFS Iterative](#dfs-iterative)
+    - [DFS Recursive](#dfs-recursive)
+- [Find cycle in a graph using BFS](#find-cycle-in-a-graph-using-bfs)
+    - [Cycle in undirected graph using BFS](#cycle-in-undirected-graph-using-bfs)
+    - [Cycle in directed graph using BFS](#cycle-in-directed-graph-using-bfs)
+ - [Find cycle in a graph using DFS](#find-cycle-in-a-graph-using-dfs)
+    - [Cycle in undirected graph using DFS](#cycle-in-undirected-graph-using-dfs)
+    - [Cycle in directed graph using DFS](#cycle-in-directed-graph-using-bds)
+- [Topological Sort](# topological-sort)
+- [Bipartate Graph](#bipartate-graph)
+- [Minimum Spanning Tree](#minimum-spanning-tree)
+- Shortest distance
+### BFS Traversal
+#### BFS for Connected Graph
 ```
 class BFS {
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -27,38 +43,14 @@ class BFS {
     }
 }
 ```
-## BFS for Disconnected Graph
+#### BFS for Disconnected Graph
+* Use the code as (#bfs-for-connected-graph), instead of offering first vertex, make a for loop and call bfs for all unvisited vertexes. *
 ```
-class BfsForDisconnectedGraph {
-    public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
-        ArrayList<Integer> res = new ArrayList<>();
-        boolean[] visited = new boolean[V];
-        for(int i=0; i<V; i++){
-            if(!visited[i])
-            bfs(adj, visited, i, res);
-        }
-        return res;
-    }
-    
-    private void bfs(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int K, ArrayList<Integer> res){
-        Queue<Integer> q = new ArrayDeque<>();
-        visited[K] = true;
-        q.offer(K);
-        while(!q.isEmpty()){
-            int vertex = q.poll();
-            res.add(vertex);
-            for(int i=0; i<adj.get(vertex).size(); i++){
-                int nextVertex = adj.get(vertex).get(i);
-                if(!visited[nextVertex]){
-                    q.offer(nextVertex);
-                    visited[nextVertex] = true;
-                }
-            }
-        }
-    }
+for(int i=0; i<V; i++){
+    if(!visited[i])
+    bfs(adj, visited, i, res);
 }
 ```
-*We can use the disconnected code in connected scenario also, we just need to remove for loop in bfsOfGraph method.*
 
 ## DFS for Connected/Disconnected Graph
 ```
