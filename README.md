@@ -1,6 +1,6 @@
 # Graph
 ## Topics one must know
-- [BFS Traversal](bfs-traversal)
+- [BFS Traversal](#bfs-traversal)
 ## BFS Traversal
 ### BFS for Connected Graph
 ```
