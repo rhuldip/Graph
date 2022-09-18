@@ -1,7 +1,8 @@
 # Graph
 ## Topics one must know
-*** BFS Traversal ***
-[## BFS for Connected Graph
+- [BFS Traversal](bfs-traversal)
+## BFS Traversal
+### BFS for Connected Graph
 ```
 class BFS {
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -25,7 +26,7 @@ class BFS {
         return res;
     }
 }
-```](bfs-traversal)
+```
 ## BFS for Disconnected Graph
 ```
 class BfsForDisconnectedGraph {
